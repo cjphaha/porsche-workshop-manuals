@@ -1,0 +1,6 @@
+/.venv/
+/tmp/
+/node_modules/
+.DS_Store
+/*.pdf
+__pycache__/

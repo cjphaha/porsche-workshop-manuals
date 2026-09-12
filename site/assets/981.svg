@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" fill="none">
+<defs><linearGradient id="paint" x1="450" y1="130" x2="450" y2="280" gradientUnits="userSpaceOnUse"><stop stop-color="#e8e6dc"/><stop offset=".45" stop-color="#babdb4"/><stop offset="1" stop-color="#7b8d83"/></linearGradient><linearGradient id="glass" x1="335" y1="117" x2="490" y2="190"><stop stop-color="#5b7b71"/><stop offset="1" stop-color="#193f36"/></linearGradient></defs>
+<ellipse cx="459" cy="300" rx="347" ry="16" fill="#082b23" opacity=".4"/>
+<path d="M118 243C121 218 143 202 211 190L299 176L363 127Q375 120 389 120L423 123L465 179L657 189Q719 192 770 223L796 242L797 263Q788 277 764 278H143Q116 272 118 243Z" fill="url(#paint)" stroke="#e0e4d6" stroke-width="2"/>
+<path d="M304 177L366 131L386 129L420 133L455 179Z" fill="url(#glass)" stroke="#d8ded1" stroke-width="3"/>
+<path d="M427 164Q455 158 469 178L565 181L554 159Q533 153 520 168L491 169L484 152Q463 145 451 160Z" fill="#19392f"/>
+<path d="M474 183L648 191L632 214L605 231L540 235L563 198" fill="#234c3e" opacity=".75"/>
+<path d="M129 237Q205 218 291 215L451 213L550 207" stroke="#f0f0df" stroke-width="2"/>
+<path d="M309 190L307 246Q307 258 324 258L478 258L503 209" stroke="#667d6e" stroke-width="2"/>
+<path d="M348 185L354 196L382 196L382 186" fill="#c4cabc" stroke="#6c8273"/>
+<path d="M187 202L154 214L145 227L190 220L222 202Z" fill="#ecf4df" stroke="#92a499"/>
+<path d="M740 211L773 228L781 239L749 229Z" fill="#b84f3d"/>
+<path d="M128 244L168 239L154 253L129 257M778 250L789 252L786 263L770 263" fill="#18392e"/>
+<path d="M294 272L598 272" stroke="#1a3b30" stroke-width="9"/>
+<g fill="#142d25" stroke="#9cae9e" stroke-width="2"><circle cx="241" cy="257" r="53"/><circle cx="678" cy="257" r="53"/></g>
+<g fill="#84968b" stroke="#c7d2c1" stroke-width="3"><circle cx="241" cy="257" r="37"/><circle cx="678" cy="257" r="37"/></g>
+<g stroke="#233f33" stroke-width="10"><path d="M241 223V291M207 257H275M217 233L265 281M217 281L265 233M678 223V291M644 257H712M654 233L702 281M654 281L702 233"/></g>
+<g fill="#bdc5b5" stroke="#334d40" stroke-width="2"><circle cx="241" cy="257" r="9"/><circle cx="678" cy="257" r="9"/></g>
+</svg>
