@@ -66,6 +66,13 @@ def heading(start, title, code=''):
     match = re.search(r'\bWM\s+([A-Z0-9]{4,10})\s+(.+)', title)
     if match:
         code, title = match.groups()
+    elif not code:
+        # Some workshop PDFs put the operation number directly at the start
+        # of each bookmark instead of prefixing it with "WM".
+        match = re.match(r'^(?:\(TI\)\s*)?([0-9][0-9A-Z]{3,9})(?:\s+|$)(.*)', title)
+        if match:
+            code = match.group(1)
+            title = match.group(2).strip() or title
     return dict(start=start, title=title, code=code, module=classify(code, title))
 
 

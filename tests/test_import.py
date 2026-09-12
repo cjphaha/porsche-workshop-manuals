@@ -72,6 +72,18 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(self.catalog()['indexingMethod'], 'bookmarks')
         self.assertEqual(self.catalog()['documents'][0]['title'], 'Engine oil')
 
+    def test_numbered_bookmarks_supply_search_code_and_module(self):
+        source = self.root / 'manuals/982/source.pdf'
+        with fitz.open(source) as pdf:
+            pdf.set_toc([[1, '100119 拆卸和安装发动机', 1], [1, '400100 检查制动器', 3]])
+            pdf.saveIncr()
+        self.assertEqual(self.run_import(), 0)
+        docs = self.catalog()['documents']
+        self.assertEqual([(d['code'], d['module'], d['title']) for d in docs], [
+            ('100119', '1', '拆卸和安装发动机'),
+            ('400100', '4', '检查制动器'),
+        ])
+
     def test_headers_are_clipped_and_cache_avoids_reextraction(self):
         original = fitz.Page.get_text
         clips = []
