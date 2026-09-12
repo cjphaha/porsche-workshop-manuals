@@ -2,53 +2,557 @@
   "version": 1,
   "model": "981",
   "categories": [
-    {"id":"engine","name":"发动机保养"},
-    {"id":"cabin","name":"空调与座舱"},
-    {"id":"ignition","name":"点火系统"},
-    {"id":"brakes","name":"制动系统"}
+    {
+      "id": "engine",
+      "name": "发动机保养"
+    },
+    {
+      "id": "fluids",
+      "name": "油液与冷却"
+    },
+    {
+      "id": "cabin",
+      "name": "空调与座舱"
+    },
+    {
+      "id": "ignition",
+      "name": "点火系统"
+    },
+    {
+      "id": "brakes",
+      "name": "制动系统"
+    }
   ],
   "parts": [
     {
-      "id":"oil-filter","category":"engine","name":"发动机机油滤芯","fitment":"981 Boxster / S / GTS · 2.7 / 3.4","note":"滤芯与带壳总成不是同一个商品；此处仅列滤芯对照。",
-      "genuine":[{"number":"9A1 107 224 00","note":"原厂滤芯号"},{"number":"0PB 115 466 A","note":"MANN 目录所列另一原厂对照号"}],
-      "alternatives":[{"brand":"MANN-FILTER","number":"HU 7026 z","type":"品牌对照滤芯，含密封圈"}],
-      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/mea-en/catalogue/search-results/product.html/hu7026z_mann-filter.html"},{"label":"Rennlist 滤芯与总成讨论","url":"https://rennlist.com/forums/981-forum/1354884-can-someone-check-their-oil-filter-housing-part-number.html"}]
+      "id": "oil-filter",
+      "category": "engine",
+      "name": "发动机机油滤芯",
+      "fitment": "981 Boxster / S / GTS · 2.7 / 3.4",
+      "note": "滤芯与带壳总成不是同一个商品；此处仅列滤芯对照。",
+      "genuine": [
+        {
+          "number": "9A1 107 224 00",
+          "note": "原厂滤芯号"
+        },
+        {
+          "number": "0PB 115 466 A",
+          "note": "MANN 目录所列另一原厂对照号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "MANN-FILTER",
+          "number": "HU 7026 z",
+          "type": "品牌对照滤芯，含密封圈"
+        }
+      ],
+      "sources": [
+        {
+          "label": "MANN 官方目录",
+          "url": "https://www.mann-filter.com/mea-en/catalogue/search-results/product.html/hu7026z_mann-filter.html"
+        },
+        {
+          "label": "Rennlist 滤芯与总成讨论",
+          "url": "https://rennlist.com/forums/981-forum/1354884-can-someone-check-their-oil-filter-housing-part-number.html"
+        }
+      ]
     },
     {
-      "id":"engine-air-filter","category":"engine","name":"发动机空气滤芯（左右一套）","fitment":"981 Boxster / S / GTS · 2.7 / 3.4","note":"BMC 为可清洗性能替代件，不应视作保时捷原装供应件；一套含两只。",
-      "genuine":[{"number":"981 110 130 00","note":"单只原厂滤芯号"}],
-      "alternatives":[{"brand":"BMC","number":"FB750/04","type":"性能替代件，一套两只"}],
-      "sources":[{"label":"BMC 官方对照与适用表","url":"https://www.bmcairfilters.com/en/products/engine-filter/car/unique/fb750-04"},{"label":"Rennlist 车主保养清单","url":"https://rennlist.com/forums/981-forum/1173667-what-did-you-do-with-your-981-today-65.html"}]
+      "id": "engine-air-filter",
+      "category": "engine",
+      "name": "发动机空气滤芯（左右一套）",
+      "fitment": "981 Boxster / S / GTS · 2.7 / 3.4",
+      "note": "BMC 为可清洗性能替代件，不应视作保时捷原装供应件；一套含两只。",
+      "genuine": [
+        {
+          "number": "981 110 130 00",
+          "note": "单只原厂滤芯号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "BMC",
+          "number": "FB750/04",
+          "type": "性能替代件，一套两只"
+        }
+      ],
+      "sources": [
+        {
+          "label": "BMC 官方对照与适用表",
+          "url": "https://www.bmcairfilters.com/en/products/engine-filter/car/unique/fb750-04"
+        },
+        {
+          "label": "Rennlist 车主保养清单",
+          "url": "https://rennlist.com/forums/981-forum/1173667-what-did-you-do-with-your-981-today-65.html"
+        }
+      ]
     },
     {
-      "id":"cabin-prefilter","category":"cabin","name":"前舱进气预滤芯","fitment":"981 Boxster / S / GTS","note":"位于前舱进气位置；不要与乘员脚部位置的空调滤芯混淆。",
-      "genuine":[{"number":"991 572 371 00","note":"原厂号"}],
-      "alternatives":[{"brand":"MANN-FILTER","number":"CU 30 004","type":"品牌对照件"}],
-      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/de-de/katalog/suchergebnisse/produkt.html/cu30004_mann-filter.html"},{"label":"Rennlist 981 空调滤芯讨论","url":"https://rennlist.com/forums/991-gt3-gt3rs-gt2rs-and-911r/1215696-two-year-service-questions-do-you-replace-air-filters-on-a-touring-2.html"}]
+      "id": "cabin-prefilter",
+      "category": "cabin",
+      "name": "前舱进气预滤芯",
+      "fitment": "981 Boxster / S / GTS",
+      "note": "位于前舱进气位置；不要与乘员脚部位置的空调滤芯混淆。",
+      "genuine": [
+        {
+          "number": "991 572 371 00",
+          "note": "原厂号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "MANN-FILTER",
+          "number": "CU 30 004",
+          "type": "品牌对照件"
+        },
+        {
+          "brand": "MAHLE",
+          "number": "LA 1121",
+          "type": "前舱进气预滤芯品牌对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "MANN 官方目录",
+          "url": "https://www.mann-filter.com/de-de/katalog/suchergebnisse/produkt.html/cu30004_mann-filter.html"
+        },
+        {
+          "label": "Rennlist 981 空调滤芯讨论",
+          "url": "https://rennlist.com/forums/991-gt3-gt3rs-gt2rs-and-911r/1215696-two-year-service-questions-do-you-replace-air-filters-on-a-touring-2.html"
+        },
+        {
+          "label": "MAHLE 官方滤芯目录",
+          "url": "https://www.mahle-aftermarket.com/media/local-media-north-america/catalogs-and-lit-pictures/fi-20-26_web.pdf"
+        }
+      ]
     },
     {
-      "id":"cabin-carbon-filter","category":"cabin","name":"车内空调活性炭滤芯","fitment":"981 Boxster / S / GTS","note":"与前舱预滤芯是两个不同位置的配件。",
-      "genuine":[{"number":"9P1 819 631","note":"原厂对照号"},{"number":"991 573 623 00","note":"MANN 目录所列另一原厂对照号"}],
-      "alternatives":[{"brand":"MANN-FILTER","number":"CUK 25 006","type":"活性炭品牌对照件"}],
-      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/cuk25006_mann-filter.html"},{"label":"Rennlist 981 空调滤芯讨论","url":"https://rennlist.com/forums/991-gt3-gt3rs-gt2rs-and-911r/1215696-two-year-service-questions-do-you-replace-air-filters-on-a-touring-2.html"}]
+      "id": "cabin-carbon-filter",
+      "category": "cabin",
+      "name": "车内空调活性炭滤芯",
+      "fitment": "981 Boxster / S / GTS",
+      "note": "与前舱预滤芯是两个不同位置的配件。",
+      "genuine": [
+        {
+          "number": "9P1 819 631",
+          "note": "原厂对照号"
+        },
+        {
+          "number": "991 573 623 00",
+          "note": "MANN 目录所列另一原厂对照号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "MANN-FILTER",
+          "number": "CUK 25 006",
+          "type": "活性炭品牌对照件"
+        },
+        {
+          "brand": "MAHLE",
+          "number": "LAK 812",
+          "type": "乘员舱活性炭滤芯品牌对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "MANN 官方目录",
+          "url": "https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/cuk25006_mann-filter.html"
+        },
+        {
+          "label": "Rennlist 981 空调滤芯讨论",
+          "url": "https://rennlist.com/forums/991-gt3-gt3rs-gt2rs-and-911r/1215696-two-year-service-questions-do-you-replace-air-filters-on-a-touring-2.html"
+        },
+        {
+          "label": "MAHLE 官方滤芯目录",
+          "url": "https://www.mahle-aftermarket.com/media/local-media-north-america/catalogs-and-lit-pictures/fi-20-26_web.pdf"
+        }
+      ]
     },
     {
-      "id":"spark-plug","category":"ignition","name":"火花塞","fitment":"981 Boxster / S / GTS · 2.7 / 3.4","note":"六缸车通常一车六只；购买时仍需按发动机号核对。",
-      "genuine":[{"number":"999 170 151 90","note":"Rennlist 所列保时捷号"}],
-      "alternatives":[{"brand":"Bosch","number":"FGR5NQE04","type":"Rennlist 车主实际使用型号"}],
-      "sources":[{"label":"Rennlist 981 车主保养清单","url":"https://rennlist.com/forums/981-forum/1173667-what-did-you-do-with-your-981-today-65.html"},{"label":"Rennlist Bosch/保时捷号讨论","url":"https://rennlist.com/forums/987-forum/726082-changing-spark-plugs-on-cayman.html"}]
+      "id": "spark-plug",
+      "category": "ignition",
+      "name": "火花塞",
+      "fitment": "981 Boxster / S / GTS · 2.7 / 3.4",
+      "note": "六缸车通常一车六只；购买时仍需按发动机号核对。",
+      "genuine": [
+        {
+          "number": "999 170 151 90",
+          "note": "Rennlist 所列保时捷号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Bosch",
+          "number": "FGR5NQE04",
+          "type": "Rennlist 车主实际使用型号"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Rennlist 981 车主保养清单",
+          "url": "https://rennlist.com/forums/981-forum/1173667-what-did-you-do-with-your-981-today-65.html"
+        },
+        {
+          "label": "Rennlist Bosch/保时捷号讨论",
+          "url": "https://rennlist.com/forums/987-forum/726082-changing-spark-plugs-on-cayman.html"
+        }
+      ]
     },
     {
-      "id":"front-brake-pads","category":"brakes","name":"前轴制动片","fitment":"981 普通钢制制动系统 · 标准黑色卡钳","note":"不适用于 PCCB；S/GTS 或改装卡钳可能不同，务必按 VIN、卡钳和制动盘确认。",
-      "genuine":[{"number":"981 351 939 04","note":"标准黑色卡钳原厂号"}],
-      "alternatives":[{"brand":"Brembo","number":"P 65 018","type":"官方目录所列 OE 对照件"}],
-      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P_65_018/pdf"},{"label":"配件适用配置说明","url":"https://www.teile.com/en/porsche-parts-shop/model-boxster-981/30/Wheels-brakes/602A-Disc-brake-front-axle/30/602-00-Disc-brake-front/Brake-pads-repair-kit-basic-version-calliper-in-black-L-R/44023"}]
+      "id": "front-brake-pads",
+      "category": "brakes",
+      "name": "前轴制动片",
+      "fitment": "981 普通钢制制动系统 · 标准黑色卡钳",
+      "note": "不适用于 PCCB；S/GTS 或改装卡钳可能不同，务必按 VIN、卡钳和制动盘确认。",
+      "genuine": [
+        {
+          "number": "981 351 939 04",
+          "note": "标准黑色卡钳原厂号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Brembo",
+          "number": "P 65 018",
+          "type": "官方目录所列 OE 对照件"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Brembo 官方对照表",
+          "url": "https://www.bremboparts.com/europe/en/catalogue/pad/P_65_018/pdf"
+        },
+        {
+          "label": "配件适用配置说明",
+          "url": "https://www.teile.com/en/porsche-parts-shop/model-boxster-981/30/Wheels-brakes/602A-Disc-brake-front-axle/30/602-00-Disc-brake-front/Brake-pads-repair-kit-basic-version-calliper-in-black-L-R/44023"
+        }
+      ]
     },
     {
-      "id":"rear-brake-pads","category":"brakes","name":"后轴制动片","fitment":"981 普通钢制制动系统 · 需核对卡钳","note":"Brembo N 为陶瓷配方替代件，并非保时捷原装材质；PCCB 和升级制动系统不适用。",
-      "genuine":[{"number":"987 352 939 03","note":"原厂号"}],
-      "alternatives":[{"brand":"Brembo","number":"P 65 028 N","type":"陶瓷配方品牌替代件"}],
-      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P65028N/pdf"},{"label":"配件适用车型说明","url":"https://teile.com/en/porsche-parts-shop/model-Boxster-981/30/Wheels-brakes/603-Disc-brake-rear-axle/31/603-00-Disc-brake-rear/Brake-pad-set-L-R/29922"}]
+      "id": "rear-brake-pads",
+      "category": "brakes",
+      "name": "后轴制动片",
+      "fitment": "981 普通钢制制动系统 · 需核对卡钳",
+      "note": "Brembo N 为陶瓷配方替代件，并非保时捷原装材质；PCCB 和升级制动系统不适用。",
+      "genuine": [
+        {
+          "number": "987 352 939 03",
+          "note": "原厂号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Brembo",
+          "number": "P 65 028 N",
+          "type": "陶瓷配方品牌替代件"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Brembo 官方对照表",
+          "url": "https://www.bremboparts.com/europe/en/catalogue/pad/P65028N/pdf"
+        },
+        {
+          "label": "配件适用车型说明",
+          "url": "https://teile.com/en/porsche-parts-shop/model-Boxster-981/30/Wheels-brakes/603-Disc-brake-rear-axle/31/603-00-Disc-brake-rear/Brake-pad-set-L-R/29922"
+        }
+      ]
+    },
+    {
+      "id": "engine-oil",
+      "category": "engine",
+      "name": "发动机机油 · 0W-40 A40",
+      "fitment": "981 Boxster / S / GTS · 2013–2015",
+      "note": "PET 列示 Mobil 1 0W-40；选购需确认瓶身有 Porsche A40 正式认可，不能仅凭 0W-40 黏度判断。",
+      "genuine": [
+        {
+          "number": "000 043 301 19",
+          "note": "PET 列示原厂 Mobil 1 0W-40，1 L"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Mobil",
+          "number": "Mobil 1 FS 0W-40",
+          "type": "当前公开产品资料列 Porsche A40 认可"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "Mobil 官方 A40 产品资料",
+          "url": "https://www.exxonmobil.com/en/apps/pds/mobil/passenger-vehicle-lube/2019/09/29/16/23/euxxmobil-1-fs-0w40"
+        }
+      ]
+    },
+    {
+      "id": "brake-fluid",
+      "category": "brakes",
+      "name": "制动液 · DOT 4 低黏度",
+      "fitment": "981 Boxster / S / GTS · 2013–2015",
+      "note": "保时捷 2018 技术通报指定新款 AfterSales 制动液；旧包装号 000 043 305 52 属库存过渡。ATE 为符合 DOT 4 / ISO 6 的品牌规格件，不宣称是保时捷灌装供应商。",
+      "genuine": [
+        {
+          "number": "000 043 210 82",
+          "note": "原厂 AfterSales 制动液，1 L"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "ATE",
+          "number": "SL.6 · 706402 / 03.9901-6402.2",
+          "type": "DOT 4 / ISO Class 6，1 L 规格对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "保时捷制动液技术通报",
+          "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10188291-0001.pdf"
+        },
+        {
+          "label": "ATE 官方产品目录",
+          "url": "https://www.ate-brakes.com/media/4569/ate-new-parts-7-2022.pdf"
+        }
+      ]
+    },
+    {
+      "id": "coolant",
+      "category": "fluids",
+      "name": "发动机冷却液／防冻液浓缩液",
+      "fitment": "981 Boxster / S / GTS · 2013–2015",
+      "note": "补液前确认现有冷却液类型与混合比例；不能仅按颜色混加。原厂号是浓缩液商品包装号。",
+      "genuine": [
+        {
+          "number": "000 043 305 15",
+          "note": "PET 列示原厂冷却液添加剂，1 L；替代旧号 000 043 301 47"
+        },
+        {
+          "number": "000 043 305 75",
+          "note": "PET 列示原厂冷却液添加剂，1 加仑"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Pentosin / FUCHS",
+          "number": "PENTOFROST E · 8113106 (1.5 L)",
+          "type": "Pentosin 官方对照原厂号 000 043 305 15；浓缩液按现车规格稀释"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "Pentosin 官方原厂号交叉对照",
+          "url": "https://crpautomotive.com/wp-content/uploads/2020/06/Pentosin-Product-Data-Sheet-Antifreeze-Pentofrost-E.pdf"
+        },
+        {
+          "label": "Design911 原厂号说明",
+          "url": "https://www.design911.co.uk/parts/00004330515/"
+        }
+      ]
+    },
+    {
+      "id": "manual-gear-oil",
+      "category": "fluids",
+      "name": "六速手动变速箱／终传动齿轮油",
+      "fitment": "981 Boxster / S / GTS · 2013–2015 · 仅手动挡",
+      "note": "PET 对应手动变速箱 G81（981）或 G82（982）；差速器是否限滑取决于选装。Shell 产品为车主选用的候选型号，采购时按 VIN 向保时捷核对当前油品规格，不与 PDK 离合器液混用。",
+      "genuine": [
+        {
+          "number": "000 043 305 48",
+          "note": "PET 列示现行原厂手动变速箱油，20 L；旧号 000 043 204 19 停用"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Shell",
+          "number": "Spirax S5 ATE 75W-90",
+          "type": "Rennlist 车主讨论的候选齿轮油，须确认具体变速箱适用性"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "Shell 官方产品安全资料",
+          "url": "https://www.epc.shell.com/DocumentManagement/BlobDocumentDownload?DocId=74202963"
+        },
+        {
+          "label": "Rennlist 手动变速箱油讨论",
+          "url": "https://rennlist.com/forums/981-forum/1467028-manual-transmission-gear-oil-fluid-for-our-981-s.html"
+        }
+      ]
+    },
+    {
+      "id": "pdk-clutch-fluid",
+      "category": "fluids",
+      "name": "PDK 离合器／液压控制液",
+      "fitment": "981 Boxster / S / GTS · 2013–2015 · 仅 PDK",
+      "note": "与 PDK 齿轮／差速器油是不同油腔、不同油品；更换及油位检查需遵守专用诊断和温度流程。保时捷包装为 Pentosin FFL-3。",
+      "genuine": [
+        {
+          "number": "000 043 207 29",
+          "note": "PET 列示 FFL-3，1 L 包装；后续包装号可向经销商核实"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Pentosin / FUCHS",
+          "number": "TITAN FFL-3（原 PENTOSIN FFL-3）",
+          "type": "针对 ZF／保时捷湿式双离合器的品牌型号"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "FUCHS 官方 FFL-3 资料",
+          "url": "https://www.fuchs.com/hu/en/product/product/110820-titan-ffl-3/"
+        },
+        {
+          "label": "Rennlist PDK 油液讨论",
+          "url": "https://rennlist.com/forums/981-forum/1492510-porsche-approved-fluids-for-pdk-and-factory-lsd.html"
+        }
+      ]
+    },
+    {
+      "id": "pdk-gear-diff-oil",
+      "category": "fluids",
+      "name": "PDK 齿轮／终传动差速器油",
+      "fitment": "981 Boxster / S / GTS · 2013–2015 · 仅 PDK",
+      "note": "齿轮和终传动共用油路，差速器放油点不等于第三种油。限滑差速器需按 VIN／PR 220 核对；绝不能灌入 PDK 离合器液油腔。",
+      "genuine": [
+        {
+          "number": "000 043 204 20",
+          "note": "PET 列示 Mobilube PTX 75W-90，20 L 包装"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Mobil",
+          "number": "Mobilube PTX 75W-90",
+          "type": "PET 所列品牌与型号；零售包装编码可能不同"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "Mobil 官方 PTX 产品说明",
+          "url": "https://www.mobil.com/en-de/passenger-vehicle-lube/pds/gl-xx-mobilube-ptx-75w90"
+        },
+        {
+          "label": "Rennlist 981 差速器油腔说明",
+          "url": "https://rennlist.com/forums/981-forum/1492510-porsche-approved-fluids-for-pdk-and-factory-lsd.html"
+        }
+      ]
+    },
+    {
+      "id": "refrigerant-r134a",
+      "category": "cabin",
+      "name": "空调冷媒 · R134a",
+      "fitment": "981 Boxster / S / GTS · 2013–2015",
+      "note": "冷媒按机舱标签及维修手册确定，不把冷媒化学代号冒充保时捷零件号；由有资质的设备按铭牌量回收、检漏、充注，不与 R1234yf 混用。",
+      "genuine": [],
+      "alternatives": [
+        {
+          "brand": "Chemours",
+          "number": "Freon 134a / R134a",
+          "type": "汽车空调冷媒化学型号，按车辆标签选用"
+        }
+      ],
+      "sources": [
+        {
+          "label": "MAHLE 官方冷媒充注资料",
+          "url": "https://www.mahle-aftermarket.com/media/homepage/facelift/media-center/klima/thermokampagne/2024/technical-support/filling/2-2-handbuch-fuellmengen-pkw-%26-nkw-231102-es-screen.pdf"
+        },
+        {
+          "label": "Chemours 官方 134a 资料",
+          "url": "https://www.chemours.com/en/-/media/files/freon/freon-134a-product-information.pdf"
+        }
+      ],
+      "genuineNote": "未找到车型适用的保时捷冷媒商品号；先看机舱标签"
+    },
+    {
+      "id": "front-wiper-set",
+      "category": "cabin",
+      "name": "前挡风玻璃雨刷片（左右一套）",
+      "fitment": "981 Boxster / S / GTS · 2013–2015 · 左舵车 LHD",
+      "note": "右舵车雨刷不可直接套用；Bosch 为 Design911 列示的品牌对照套装，按雨刷接口核对。",
+      "genuine": [
+        {
+          "number": "991 628 901 01",
+          "note": "前雨刷两只一套，Design911 列示替代早期 991 628 901 00"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Bosch",
+          "number": "3 397 007 697",
+          "type": "左舵前雨刷两只套装，Design911 品牌件对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "Design911 Bosch 对照与车型范围",
+          "url": "https://www.design911.co.uk/p/porsche-991-boxster-cayman-wiper-blade-set-front-99162890101-99162890100/"
+        },
+        {
+          "label": "Bosch 官方雨刷目录",
+          "url": "https://www.boschautoparts.com/documents/647135/656897/2021%20Bosch%20Wiper%20Blade%20Catalog.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pdk-pan-filter",
+      "category": "fluids",
+      "name": "PDK 油底壳／集成滤芯",
+      "fitment": "981 Boxster / S / GTS · 2013–2015 · 仅 PDK",
+      "note": "原厂塑料油底壳附滤芯；设计 911 的 OE Match 为售后替代件，不等于原装供应商。升级铝壳需配专用可换滤芯和密封件。",
+      "genuine": [
+        {
+          "number": "9G1 321 025 00",
+          "note": "PET 列示 PDK 油底壳（2018 目录版本）"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Design911 OE Match",
+          "number": "9P1 321 359",
+          "type": "售后对照总成；下单按 VIN 核实修订号与附件"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-Boxster-981-2012-2016-Parts.pdf"
+        },
+        {
+          "label": "Design911 PDK 油底壳适用及对照",
+          "url": "https://www.design911.co.uk/p/oil-pan-porsche-987-cayman-987-boxster-991-997-gen2-9p1321359/"
+        }
+      ]
     }
   ]
 }

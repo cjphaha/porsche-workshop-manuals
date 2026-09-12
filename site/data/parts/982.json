@@ -2,59 +2,640 @@
   "version": 1,
   "model": "982",
   "categories": [
-    {"id":"engine","name":"发动机保养"},
-    {"id":"cabin","name":"空调与座舱"},
-    {"id":"ignition","name":"点火系统"},
-    {"id":"brakes","name":"制动系统"}
+    {
+      "id": "engine",
+      "name": "发动机保养"
+    },
+    {
+      "id": "fluids",
+      "name": "油液与冷却"
+    },
+    {
+      "id": "cabin",
+      "name": "空调与座舱"
+    },
+    {
+      "id": "ignition",
+      "name": "点火系统"
+    },
+    {
+      "id": "brakes",
+      "name": "制动系统"
+    }
   ],
   "parts": [
     {
-      "id":"oil-filter","category":"engine","name":"发动机机油滤芯","fitment":"2018 718 Boxster / S / GTS · 2.0 / 2.5 四缸","note":"此目录仅覆盖 2018 年四缸车型；不要套用后期 4.0 六缸滤芯。",
-      "genuine":[{"number":"9A2 107 225 00","note":"原厂对照号"},{"number":"0PC 115 466","note":"MANN 目录所列另一原厂对照号"}],
-      "alternatives":[{"brand":"MANN-FILTER","number":"HU 7051 z","type":"品牌对照滤芯，含密封圈"},{"brand":"Hengst","number":"E911H D455","type":"品牌对照滤芯"}],
-      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/mea-en/catalogue/search-results/product.html/hu7051z_mann-filter.html"},{"label":"Hengst 官方适用表","url":"https://catalog.hengst.com/en/online-catalog/product/8229310000-01/nl/"}]
+      "id": "oil-filter",
+      "category": "engine",
+      "name": "发动机机油滤芯",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 四缸",
+      "note": "此目录仅覆盖 2018 年四缸车型；不要套用后期 4.0 六缸滤芯。",
+      "genuine": [
+        {
+          "number": "9A2 107 225 00",
+          "note": "原厂对照号"
+        },
+        {
+          "number": "0PC 115 466",
+          "note": "MANN 目录所列另一原厂对照号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "MANN-FILTER",
+          "number": "HU 7051 z",
+          "type": "品牌对照滤芯，含密封圈"
+        },
+        {
+          "brand": "Hengst",
+          "number": "E911H D455",
+          "type": "品牌对照滤芯"
+        }
+      ],
+      "sources": [
+        {
+          "label": "MANN 官方目录",
+          "url": "https://www.mann-filter.com/mea-en/catalogue/search-results/product.html/hu7051z_mann-filter.html"
+        },
+        {
+          "label": "Hengst 官方适用表",
+          "url": "https://catalog.hengst.com/en/online-catalog/product/8229310000-01/nl/"
+        }
+      ]
     },
     {
-      "id":"engine-air-filter","category":"engine","name":"发动机空气滤芯","fitment":"2018 718 Boxster / S / GTS · 2.0 / 2.5 四缸","note":"按车辆原装进气结构核对；与 981 六缸空气滤芯不同。",
-      "genuine":[{"number":"982 129 620 B","note":"原厂对照号"}],
-      "alternatives":[{"brand":"Hengst","number":"E1590L","type":"品牌对照件"}],
-      "sources":[{"label":"Hengst 官方适用与 OE 对照","url":"https://catalog.hengst.com/en/online-catalog/product/8229310000-01/nl/"}]
+      "id": "engine-air-filter",
+      "category": "engine",
+      "name": "发动机空气滤芯",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 四缸",
+      "note": "按车辆原装进气结构核对；与 981 六缸空气滤芯不同。",
+      "genuine": [
+        {
+          "number": "982 129 620 B",
+          "note": "原厂对照号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Hengst",
+          "number": "E1590L",
+          "type": "品牌对照件"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Hengst 官方适用与 OE 对照",
+          "url": "https://catalog.hengst.com/en/online-catalog/product/8229310000-01/nl/"
+        }
+      ]
     },
     {
-      "id":"cabin-prefilter","category":"cabin","name":"前舱进气预滤芯","fitment":"2018 718 Boxster / S / GTS","note":"718 乘员舱另有一个空调滤芯，此条为前舱预滤芯。",
-      "genuine":[{"number":"991 572 371 00","note":"原厂号"}],
-      "alternatives":[{"brand":"MANN-FILTER","number":"CU 30 004","type":"品牌对照件"}],
-      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/de-de/katalog/suchergebnisse/produkt.html/cu30004_mann-filter.html"},{"label":"Rennlist 718 两处滤芯说明","url":"https://rennlist.com/forums/718-forum/1140807-2-year-service-replace-air-intake-pre-filter.html"}]
+      "id": "cabin-prefilter",
+      "category": "cabin",
+      "name": "前舱进气预滤芯",
+      "fitment": "2018 718 Boxster / S / GTS",
+      "note": "718 乘员舱另有一个空调滤芯，此条为前舱预滤芯。",
+      "genuine": [
+        {
+          "number": "991 572 371 00",
+          "note": "原厂号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "MANN-FILTER",
+          "number": "CU 30 004",
+          "type": "品牌对照件"
+        },
+        {
+          "brand": "MAHLE",
+          "number": "LA 1121",
+          "type": "前舱进气预滤芯品牌对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "MANN 官方目录",
+          "url": "https://www.mann-filter.com/de-de/katalog/suchergebnisse/produkt.html/cu30004_mann-filter.html"
+        },
+        {
+          "label": "Rennlist 718 两处滤芯说明",
+          "url": "https://rennlist.com/forums/718-forum/1140807-2-year-service-replace-air-intake-pre-filter.html"
+        },
+        {
+          "label": "MAHLE 官方滤芯目录",
+          "url": "https://www.mahle-aftermarket.com/media/local-media-north-america/catalogs-and-lit-pictures/fi-20-26_web.pdf"
+        }
+      ]
     },
     {
-      "id":"cabin-carbon-filter","category":"cabin","name":"车内空调活性炭滤芯","fitment":"2018 718 Boxster / S / GTS","note":"位于乘员侧空调系统；与前舱预滤芯分开购买。",
-      "genuine":[{"number":"9P1 819 631","note":"原厂对照号"},{"number":"991 573 623 00","note":"MANN 目录所列另一原厂对照号"}],
-      "alternatives":[{"brand":"MANN-FILTER","number":"CUK 25 006","type":"活性炭品牌对照件"}],
-      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/cuk25006_mann-filter.html"},{"label":"Rennlist 718 两处滤芯说明","url":"https://rennlist.com/forums/718-forum/1140807-2-year-service-replace-air-intake-pre-filter.html"}]
+      "id": "cabin-carbon-filter",
+      "category": "cabin",
+      "name": "车内空调活性炭滤芯",
+      "fitment": "2018 718 Boxster / S / GTS",
+      "note": "位于乘员侧空调系统；与前舱预滤芯分开购买。",
+      "genuine": [
+        {
+          "number": "9P1 819 631",
+          "note": "原厂对照号"
+        },
+        {
+          "number": "991 573 623 00",
+          "note": "MANN 目录所列另一原厂对照号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "MANN-FILTER",
+          "number": "CUK 25 006",
+          "type": "活性炭品牌对照件"
+        },
+        {
+          "brand": "MAHLE",
+          "number": "LAK 812",
+          "type": "乘员舱活性炭滤芯品牌对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "MANN 官方目录",
+          "url": "https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/cuk25006_mann-filter.html"
+        },
+        {
+          "label": "Rennlist 718 两处滤芯说明",
+          "url": "https://rennlist.com/forums/718-forum/1140807-2-year-service-replace-air-intake-pre-filter.html"
+        },
+        {
+          "label": "MAHLE 官方滤芯目录",
+          "url": "https://www.mahle-aftermarket.com/media/local-media-north-america/catalogs-and-lit-pictures/fi-20-26_web.pdf"
+        }
+      ]
     },
     {
-      "id":"spark-plug-base","category":"ignition","name":"火花塞 · 2.0 基础版","fitment":"2018 718 Boxster · 2.0 四缸","note":"仅列 2.0 基础版；2.5 S / GTS 使用下方另一型号。",
-      "genuine":[{"number":"0PB 905 612","note":"原厂号"}],
-      "alternatives":[{"brand":"Bosch","number":"8124 / ZR5NPP332SBP","type":"品牌对照型号"}],
-      "sources":[{"label":"Bosch 适用对照资料","url":"https://www.rmeuropean.com/Products/0PB905612-MFG14.aspx"},{"label":"Rennlist 零件号讨论","url":"https://rennlist.com/forums/992/1246829-2021-992-s-do-not-have-spark-plugs-or-ignition-coils.html"}]
+      "id": "spark-plug-base",
+      "category": "ignition",
+      "name": "火花塞 · 2.0 基础版",
+      "fitment": "2018 718 Boxster · 2.0 四缸",
+      "note": "仅列 2.0 基础版；2.5 S / GTS 使用下方另一型号。",
+      "genuine": [
+        {
+          "number": "0PB 905 612",
+          "note": "原厂号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Bosch",
+          "number": "8124 / ZR5NPP332SBP",
+          "type": "品牌对照型号"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Bosch 适用对照资料",
+          "url": "https://www.rmeuropean.com/Products/0PB905612-MFG14.aspx"
+        },
+        {
+          "label": "Rennlist 零件号讨论",
+          "url": "https://rennlist.com/forums/992/1246829-2021-992-s-do-not-have-spark-plugs-or-ignition-coils.html"
+        }
+      ]
     },
     {
-      "id":"spark-plug-s-gts","category":"ignition","name":"火花塞 · 2.5 S / GTS","fitment":"2018 718 Boxster S / GTS · 2.5 四缸","note":"与 2.0 基础版不同；一车四只。",
-      "genuine":[{"number":"9A7 905 606 00","note":"原厂号"}],
-      "alternatives":[{"brand":"NGK","number":"SILKGR9A7EG / 91731","type":"品牌对照型号"}],
-      "sources":[{"label":"NGK 官方交叉对照","url":"https://www.ngkntk.com/fileadmin/general_content_all_countries/catalogues/2025/ngkntk_catalogue_2wheel_2025-2026_en_2025-06_a4.pdf"},{"label":"车型适用资料","url":"https://www.rmeuropean.com/Products/9A790560600-MFG220.aspx"}]
+      "id": "spark-plug-s-gts",
+      "category": "ignition",
+      "name": "火花塞 · 2.5 S / GTS",
+      "fitment": "2018 718 Boxster S / GTS · 2.5 四缸",
+      "note": "与 2.0 基础版不同；一车四只。",
+      "genuine": [
+        {
+          "number": "9A7 905 606 00",
+          "note": "原厂号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "NGK",
+          "number": "SILKGR9A7EG / 91731",
+          "type": "品牌对照型号"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NGK 官方交叉对照",
+          "url": "https://www.ngkntk.com/fileadmin/general_content_all_countries/catalogues/2025/ngkntk_catalogue_2wheel_2025-2026_en_2025-06_a4.pdf"
+        },
+        {
+          "label": "车型适用资料",
+          "url": "https://www.rmeuropean.com/Products/9A790560600-MFG220.aspx"
+        }
+      ]
     },
     {
-      "id":"front-brake-pads","category":"brakes","name":"前轴制动片","fitment":"2018 718 普通钢制制动系统 · 标准卡钳","note":"仅作标准钢制制动系统对照；PCCB、GTS 及改装卡钳请先按 VIN 和卡钳规格确认。",
-      "genuine":[{"number":"982 698 151 B","note":"Brembo 目录所列原厂对照号"}],
-      "alternatives":[{"brand":"Brembo","number":"P 65 018","type":"官方目录所列 OE 对照件"}],
-      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P_65_018/pdf"}]
+      "id": "front-brake-pads",
+      "category": "brakes",
+      "name": "前轴制动片",
+      "fitment": "2018 718 普通钢制制动系统 · 标准卡钳",
+      "note": "仅作标准钢制制动系统对照；PCCB、GTS 及改装卡钳请先按 VIN 和卡钳规格确认。",
+      "genuine": [
+        {
+          "number": "982 698 151 B",
+          "note": "Brembo 目录所列原厂对照号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Brembo",
+          "number": "P 65 018",
+          "type": "官方目录所列 OE 对照件"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Brembo 官方对照表",
+          "url": "https://www.bremboparts.com/europe/en/catalogue/pad/P_65_018/pdf"
+        }
+      ]
     },
     {
-      "id":"rear-brake-pads","category":"brakes","name":"后轴制动片","fitment":"2018 718 普通钢制制动系统 · 需核对卡钳","note":"Brembo N 为陶瓷配方替代件；PCCB、GTS 及改装制动系统须单独查号。",
-      "genuine":[{"number":"987 352 939 03","note":"原厂对照号"}],
-      "alternatives":[{"brand":"Brembo","number":"P 65 028 N","type":"陶瓷配方品牌替代件"}],
-      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P65028N/pdf"},{"label":"配件适用车型说明","url":"https://teile.com/en/porsche-parts-shop/model-Boxster-981/30/Wheels-brakes/603-Disc-brake-rear-axle/31/603-00-Disc-brake-rear/Brake-pad-set-L-R/29922"}]
+      "id": "rear-brake-pads",
+      "category": "brakes",
+      "name": "后轴制动片",
+      "fitment": "2018 718 普通钢制制动系统 · 需核对卡钳",
+      "note": "Brembo N 为陶瓷配方替代件；PCCB、GTS 及改装制动系统须单独查号。",
+      "genuine": [
+        {
+          "number": "987 352 939 03",
+          "note": "原厂对照号"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Brembo",
+          "number": "P 65 028 N",
+          "type": "陶瓷配方品牌替代件"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Brembo 官方对照表",
+          "url": "https://www.bremboparts.com/europe/en/catalogue/pad/P65028N/pdf"
+        },
+        {
+          "label": "配件适用车型说明",
+          "url": "https://teile.com/en/porsche-parts-shop/model-Boxster-981/30/Wheels-brakes/603-Disc-brake-rear-axle/31/603-00-Disc-brake-rear/Brake-pad-set-L-R/29922"
+        }
+      ]
+    },
+    {
+      "id": "engine-oil-a40",
+      "category": "engine",
+      "name": "发动机机油 · 0W-40（早期目录）",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · PET 至 2018-05-13",
+      "note": "PET 用生产日期分界，早期列 Mobil 1 0W-40。购油前按 VIN、排放配置和车主手册确认 Porsche A40，不将 A40 与后期 C40 混用。",
+      "genuine": [
+        {
+          "number": "000 043 305 21",
+          "note": "PET 列示原厂 Mobil 1 0W-40，1 L；至 2018-05-13"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Mobil",
+          "number": "Mobil 1 FS 0W-40",
+          "type": "公开产品资料列 Porsche A40 认可，仅供适用 A40 的车"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Mobil 官方 A40 产品资料",
+          "url": "https://www.exxonmobil.com/en/apps/pds/mobil/passenger-vehicle-lube/2019/09/29/16/23/euxxmobil-1-fs-0w40"
+        }
+      ]
+    },
+    {
+      "id": "engine-oil-c40",
+      "category": "engine",
+      "name": "发动机机油 · 0W-40 ESP X3（后期目录）",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · PET 自 2018-05-14",
+      "note": "PET 在该日期起列 ESP X3；仅供 VIN／手册指定 Porsche C40 的配置。Mobil 明示 ESP X3 不向需要 A40 的发动机向下兼容。",
+      "genuine": [
+        {
+          "number": "000 043 210 93",
+          "note": "PET 列示原厂 Mobil 1 ESP X3 0W-40，1 L；自 2018-05-14"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Mobil",
+          "number": "Mobil 1 ESP X3 0W-40",
+          "type": "Porsche C40 认可，依具体市场包装资料核查"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Mobil 官方 C40 产品资料",
+          "url": "https://www.mobil.com/pl-pl/passenger-vehicle-lube/pds/gl-xx-mobil-1-esp-x3-0w40"
+        }
+      ]
+    },
+    {
+      "id": "brake-fluid",
+      "category": "brakes",
+      "name": "制动液 · DOT 4 低黏度",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5",
+      "note": "保时捷 2018 技术通报指定新款 AfterSales 制动液；旧包装号 000 043 305 52 属库存过渡。ATE 为符合 DOT 4 / ISO 6 的品牌规格件，不宣称是保时捷灌装供应商。",
+      "genuine": [
+        {
+          "number": "000 043 210 82",
+          "note": "原厂 AfterSales 制动液，1 L"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "ATE",
+          "number": "SL.6 · 706402 / 03.9901-6402.2",
+          "type": "DOT 4 / ISO Class 6，1 L 规格对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "保时捷制动液技术通报",
+          "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10188291-0001.pdf"
+        },
+        {
+          "label": "ATE 官方产品目录",
+          "url": "https://www.ate-brakes.com/media/4569/ate-new-parts-7-2022.pdf"
+        }
+      ]
+    },
+    {
+      "id": "coolant",
+      "category": "fluids",
+      "name": "发动机冷却液／防冻液浓缩液",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5",
+      "note": "补液前确认现有冷却液类型与混合比例；不能仅按颜色混加。原厂号是浓缩液商品包装号。",
+      "genuine": [
+        {
+          "number": "000 043 305 15",
+          "note": "PET 列示原厂冷却液添加剂，1 L；替代旧号 000 043 301 47"
+        },
+        {
+          "number": "000 043 305 75",
+          "note": "PET 列示原厂冷却液添加剂，1 加仑"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Pentosin / FUCHS",
+          "number": "PENTOFROST E · 8113106 (1.5 L)",
+          "type": "Pentosin 官方对照原厂号 000 043 305 15；浓缩液按现车规格稀释"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Pentosin 官方原厂号交叉对照",
+          "url": "https://crpautomotive.com/wp-content/uploads/2020/06/Pentosin-Product-Data-Sheet-Antifreeze-Pentofrost-E.pdf"
+        },
+        {
+          "label": "Design911 原厂号说明",
+          "url": "https://www.design911.co.uk/parts/00004330515/"
+        }
+      ]
+    },
+    {
+      "id": "manual-gear-oil",
+      "category": "fluids",
+      "name": "六速手动变速箱／终传动齿轮油",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · 仅手动挡",
+      "note": "PET 对应手动变速箱 G81（981）或 G82（982）；差速器是否限滑取决于选装。Shell 产品为车主选用的候选型号，采购时按 VIN 向保时捷核对当前油品规格，不与 PDK 离合器液混用。",
+      "genuine": [
+        {
+          "number": "000 043 305 48",
+          "note": "PET 列示现行原厂手动变速箱油，20 L；旧号 000 043 204 19 停用"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Shell",
+          "number": "Spirax S5 ATE 75W-90",
+          "type": "Rennlist 车主讨论的候选齿轮油，须确认具体变速箱适用性"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Shell 官方产品安全资料",
+          "url": "https://www.epc.shell.com/DocumentManagement/BlobDocumentDownload?DocId=74202963"
+        },
+        {
+          "label": "Rennlist 手动变速箱油讨论",
+          "url": "https://rennlist.com/forums/981-forum/1467028-manual-transmission-gear-oil-fluid-for-our-981-s.html"
+        }
+      ]
+    },
+    {
+      "id": "pdk-clutch-fluid",
+      "category": "fluids",
+      "name": "PDK 离合器／液压控制液",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · 仅 PDK",
+      "note": "与 PDK 齿轮／差速器油是不同油腔、不同油品；更换及油位检查需遵守专用诊断和温度流程。保时捷包装为 Pentosin FFL-3。",
+      "genuine": [
+        {
+          "number": "000 043 305 13",
+          "note": "PET 列示 FFL-3，1 L 包装"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Pentosin / FUCHS",
+          "number": "TITAN FFL-3（原 PENTOSIN FFL-3）",
+          "type": "针对 ZF／保时捷湿式双离合器的品牌型号"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "FUCHS 官方 FFL-3 资料",
+          "url": "https://www.fuchs.com/hu/en/product/product/110820-titan-ffl-3/"
+        },
+        {
+          "label": "Rennlist PDK 油液讨论",
+          "url": "https://rennlist.com/forums/981-forum/1492510-porsche-approved-fluids-for-pdk-and-factory-lsd.html"
+        }
+      ]
+    },
+    {
+      "id": "pdk-gear-diff-oil",
+      "category": "fluids",
+      "name": "PDK 齿轮／终传动差速器油",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · 仅 PDK",
+      "note": "齿轮和终传动共用油路，差速器放油点不等于第三种油。限滑差速器需按 VIN／PR 220 核对；绝不能灌入 PDK 离合器液油腔。",
+      "genuine": [
+        {
+          "number": "000 043 305 55",
+          "note": "PET 列示 Mobilube PTX 75W-90，20 L 包装"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Mobil",
+          "number": "Mobilube PTX 75W-90",
+          "type": "PET 所列品牌与型号；零售包装编码可能不同"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Mobil 官方 PTX 产品说明",
+          "url": "https://www.mobil.com/en-de/passenger-vehicle-lube/pds/gl-xx-mobilube-ptx-75w90"
+        },
+        {
+          "label": "Rennlist 981 差速器油腔说明",
+          "url": "https://rennlist.com/forums/981-forum/1492510-porsche-approved-fluids-for-pdk-and-factory-lsd.html"
+        }
+      ]
+    },
+    {
+      "id": "refrigerant-r134a",
+      "category": "cabin",
+      "name": "空调冷媒 · R134a",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · 空调 PR KK1",
+      "note": "PET 同时列 KK1 和 KK3 冷媒配置；必须以机舱标签或 VIN 核实实际冷媒。两种冷媒与设备不能混用，冷媒充注量按车辆铭牌执行。",
+      "genuine": [],
+      "alternatives": [
+        {
+          "brand": "Chemours",
+          "number": "Freon 134a / R134a",
+          "type": "冷媒品牌与化学型号，非保时捷原装供应商声明"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Chemours 官方冷媒资料",
+          "url": "https://www.chemours.com/en/-/media/files/freon/freon-134a-product-information.pdf"
+        }
+      ],
+      "genuineNote": "PET 未列单车冷媒商品号；以机舱标签和 PR 配置为准"
+    },
+    {
+      "id": "refrigerant-r1234yf",
+      "category": "cabin",
+      "name": "空调冷媒 · R1234yf",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · 空调 PR KK3",
+      "note": "PET 同时列 KK1 和 KK3 冷媒配置；必须以机舱标签或 VIN 核实实际冷媒。两种冷媒与设备不能混用，冷媒充注量按车辆铭牌执行。",
+      "genuine": [],
+      "alternatives": [
+        {
+          "brand": "Chemours",
+          "number": "Opteon YF / R1234yf",
+          "type": "冷媒品牌与化学型号，非保时捷原装供应商声明"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Chemours 官方冷媒资料",
+          "url": "https://www.chemours.com/en/-/media/files/opteon/opteon-yf-product-information-bulletin.pdf"
+        }
+      ],
+      "genuineNote": "PET 未列单车冷媒商品号；以机舱标签和 PR 配置为准"
+    },
+    {
+      "id": "front-wiper-set",
+      "category": "cabin",
+      "name": "前挡风玻璃雨刷片（左右一套）",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · 左舵车 LHD",
+      "note": "右舵车雨刷不可直接套用；Bosch 为 Design911 列示的品牌对照套装，按雨刷接口核对。",
+      "genuine": [
+        {
+          "number": "991 628 901 01",
+          "note": "前雨刷两只一套，Design911 列示替代早期 991 628 901 00"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Bosch",
+          "number": "3 397 007 697",
+          "type": "左舵前雨刷两只套装，Design911 品牌件对照"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Design911 Bosch 对照与车型范围",
+          "url": "https://www.design911.co.uk/p/porsche-991-boxster-cayman-wiper-blade-set-front-99162890101-99162890100/"
+        },
+        {
+          "label": "Bosch 官方雨刷目录",
+          "url": "https://www.boschautoparts.com/documents/647135/656897/2021%20Bosch%20Wiper%20Blade%20Catalog.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pdk-pan-filter",
+      "category": "fluids",
+      "name": "PDK 油底壳／集成滤芯",
+      "fitment": "2018 718 Boxster / S / GTS · 2.0 / 2.5 · 仅 PDK",
+      "note": "原厂塑料油底壳附滤芯；设计 911 的 OE Match 为售后替代件，不等于原装供应商。升级铝壳需配专用可换滤芯和密封件。",
+      "genuine": [
+        {
+          "number": "9G1 321 125 00",
+          "note": "PET 列示 PDK 油底壳（2018 目录版本）"
+        }
+      ],
+      "alternatives": [
+        {
+          "brand": "Design911 OE Match",
+          "number": "9P1 321 359",
+          "type": "售后对照总成；下单按 VIN 核实修订号与附件"
+        }
+      ],
+      "sources": [
+        {
+          "label": "保时捷 PET 零件目录（2018 版）",
+          "url": "https://www.stuttcars.com/wp-content/uploads/2021/04/Porsche-718-Boxster-9822017-today-Parts.pdf"
+        },
+        {
+          "label": "Design911 PDK 油底壳适用及对照",
+          "url": "https://www.design911.co.uk/p/oil-pan-porsche-987-cayman-987-boxster-991-997-gen2-9p1321359/"
+        }
+      ]
     }
   ]
 }
