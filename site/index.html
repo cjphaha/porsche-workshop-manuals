@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#123f35">
+  <meta name="theme-color" content="#b82035">
   <meta name="description" content="981 Boxster 车间维修手册。按维修模块浏览，搜索维修项目与 WM 编号，按需阅读原版 PDF。">
-  <title>Werkstatt · 保时捷维修手册</title>
+  <title>Porsche 维修资料库</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script src="assets/theme.js"></script>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/themes.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#/" aria-label="返回车型选择"><span class="brand-mark">W<span>↗</span></span><span>WERKSTATT<small>保时捷维修资料库</small></span></a>
+    <a class="brand" href="#/" aria-label="返回车型选择"><svg class="garage-mark" viewBox="50 30 650 215" aria-hidden="true"><defs><filter id="lineart-ink" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -.3333 -.3333 -.3333 0 1"/><feComponentTransfer result="lines"><feFuncA type="linear" slope="2.2"/></feComponentTransfer><feFlood class="logo-tone" flood-color="#7c8185"/><feComposite in2="lines" operator="in"/></filter></defs><image href="assets/911-lineart.png" width="768" height="274" filter="url(#lineart-ink)"/></svg><span>Porsche<small>维修资料库</small></span></a>
     <nav aria-label="主导航"><a href="#/" id="nav-models">车型资料库</a><a href="#/981" id="nav-manual">维修手册</a></nav>
-    <span class="header-note"><i></i> 独立资料索引</span>
+    <div class="header-actions"><span class="header-note"><i></i> 独立资料索引</span><label class="theme-picker"><span class="theme-swatch" aria-hidden="true"></span><span class="theme-label">主题色</span><select id="theme-select" aria-label="主题色"><option value="red">红黑</option><option value="green">经典绿</option><option value="silver">GT银</option><option value="yellow">黄色</option><option value="grey">雅灰</option><option value="blue">午夜蓝</option></select></label></div>
   </header>
   <main id="app"><div class="loading-state">正在载入维修资料索引…</div></main>
-  <footer class="footer"><span>WERKSTATT <span class="footer-dot">/</span> 为每一次认真维修</span><span>独立整理 · 非保时捷官方网站</span></footer>
+  <footer class="footer"><span>Porsche 维修资料库</span><span>独立整理 · 非保时捷官方网站</span></footer>
   <script type="module" src="assets/app.mjs"></script>
 </body>
 </html>

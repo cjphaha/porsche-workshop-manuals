@@ -1,0 +1,58 @@
+/* Paint-inspired accents with a light reading surface in every theme. */
+:root {
+  --logo-tone: #7c8185;
+  --on-primary: #fff;
+  --on-primary-muted: var(--on-dark-muted);
+}
+:root[data-theme="green"] { --logo-tone: #65816f; }
+:root[data-theme="silver"] {
+  --ink: #292e34; --muted: #717980; --primary: #59646f;
+  --accent: #dce2e8; --paper: #f5f6f7; --line: #dce0e4;
+  --soft: #e7ebef; --hover: #edf0f3; --secondary: #586a7c;
+  --stage: #dfe3e7; --status-dot: #b8c4ce; --cover: #30363c;
+  --on-dark: #f6f8fa; --on-dark-muted: #c9d2da;
+  --focus: #59646f; --logo-tone: #788590;
+}
+:root[data-theme="yellow"] {
+  --ink: #322c20; --muted: #80765f; --primary: #e3b62b;
+  --accent: #f5dfa0; --paper: #fbf9f1; --line: #e7dfc9;
+  --soft: #f5edcf; --hover: #f8f1da; --secondary: #846315;
+  --stage: #e9e3d2; --status-dot: #e3b62b; --cover: #302c23;
+  --on-dark: #fffaed; --on-dark-muted: #e0d1a6;
+  --focus: #98710e; --logo-tone: #9c842e;
+  --on-primary: #302812; --on-primary-muted: #57451b;
+}
+:root[data-theme="grey"] {
+  --ink: #30332f; --muted: #787b73; --primary: #6b716a;
+  --accent: #d9dcd4; --paper: #f2f1ed; --line: #ddddd5;
+  --soft: #e5e6de; --hover: #eaeae3; --secondary: #646f5f;
+  --stage: #dedfd6; --status-dot: #b1b9a7; --cover: #393e39;
+  --on-dark: #f5f5ee; --on-dark-muted: #ced3c5;
+  --focus: #626c5b; --logo-tone: #7b8173;
+}
+:root[data-theme="blue"] {
+  --ink: #232f41; --muted: #727e90; --primary: #253f63;
+  --accent: #becfe4; --paper: #f4f6fa; --line: #dce2eb;
+  --soft: #e4ebf5; --hover: #eaf0f8; --secondary: #516b8d;
+  --stage: #dce3ed; --status-dot: #8faed3; --cover: #17263c;
+  --on-dark: #f3f7fe; --on-dark-muted: #bbcde3;
+  --focus: #456d9d; --logo-tone: #617c9f;
+}
+.logo-tone { flood-color: var(--logo-tone); }
+.model-card:not(.owner-car) { background: var(--cover); }
+.model-card:not(.owner-car) .round-arrow { color: var(--ink); }
+.button:not(.subtle), .module-link.active, .pdf-status:not(.error),
+.owner-car .round-arrow, .continuous-reader .download-link {
+  color: var(--on-primary);
+}
+.module-link.active svg, .module-link.active small {
+  color: var(--on-primary-muted);
+}
+.button.subtle, .search-wrap > svg { color: var(--secondary); }
+:root[data-theme="green"] .owner-car .round-arrow { color: var(--primary); }
+/* Other paint themes use the supplied 911 line drawing as their cover. */
+.owner-car .theme-lineart { display: none; }
+:root:not([data-theme="red"]) .owner-car { background: var(--cover); }
+:root:not([data-theme="red"]) .owner-car > img.car-art { display: none; }
+:root:not([data-theme="red"]) .owner-car .theme-lineart { display: block; }
+.cover-lineart-tone { flood-color: var(--on-dark-muted); }

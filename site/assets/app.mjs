@@ -25,15 +25,18 @@ const iconPaths = {
 };
 function icon(name) {return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${iconPaths[name] || iconPaths.book}"/></svg>`;}
 const docURL = (id,page=1,model=catalog.model) => `#/${model}/doc/${id}?page=${page}`;
+function alternateCover() {
+  return `<svg class="car-art theme-lineart" viewBox="50 20 650 240" role="img" aria-label="911 线稿主题封面"><defs><filter id="cover-lineart-ink" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -.3333 -.3333 -.3333 0 1"/><feComponentTransfer result="lines"><feFuncA type="linear" slope="2.2"/></feComponentTransfer><feFlood class="cover-lineart-tone"/><feComposite in2="lines" operator="in"/></filter></defs><image href="assets/911-cover-lineart.png" width="768" height="274" filter="url(#cover-lineart-ink)"/></svg>`;
+}
 function home() {
   const last=readStorage('werkstatt-last');
   const lastModel=last?.model || '981';
   const canResume=last && registry.models.some(m=>m.model===lastModel) && typeof last.id==='string' && /^[a-z0-9-]+$/.test(last.id);
   const totalPages=registry.models.reduce((sum,m)=>sum+m.sourcePages,0);
   const totalDocs=registry.models.reduce((sum,m)=>sum+m.documentCount,0);
-  const cards=registry.models.map(m=>`<a href="#/${m.model}" class="model-card"><div class="model-top"><span class="model-label">PORSCHE · ${escapeHTML(m.name)}</span><span class="pill light">维修手册已收录 <i></i></span></div><div class="model-number ${m.model.length>4?'long-model':''}">${escapeHTML(m.model)}<span>${escapeHTML(m.years || '')}</span></div>${m.image ? `<img src="${escapeHTML(m.image)}" alt="${escapeHTML(m.model)} 车型示意图" class="car-art">` : `<div class="model-placeholder">${icon('book')}<span>WORKSHOP MANUAL</span><small>${fmt(m.sourcePages)} 页 · ${fmt(m.documentCount)} 份资料</small></div>`}<div class="model-bottom"><div><h2>${escapeHTML(m.name)}</h2><p>查看维修模块与资料索引</p></div><span class="round-arrow">↗</span></div></a>`).join('');
-  app.innerHTML=`<section class="home-intro"><div class="eyebrow"><span class="short-line"></span> THE WORKSHOP LIBRARY</div><h1>每一处细节，<br>都有据可循。</h1><p>从保养检查到部件维修，找到你需要的那一页。<br>选择车型，开始查阅原版车间维修资料。</p><div class="intro-caption"><span>01 / 车型选择 · ${registry.models.length} 个车型</span><span>原版图文 · 按需加载</span></div></section>
-  <section class="model-section ${registry.models.length>1?'multi-model':''}" aria-label="选择车型">${cards}${registry.models.length===1?`<div class="model-detail"><span class="eyebrow">YOUR TECHNICAL COMPANION</span><h2>让查阅，<br>跟上你的思路。</h2><p>按系统找到维修项目，<br>用熟悉的词搜索专业资料。</p><div class="stat-line"><strong>${fmt(totalPages)}</strong><span>页原版资料</span></div><div class="stat-line"><strong>${fmt(totalDocs)}</strong><span>份维修资料切片</span></div><a class="text-link" href="#/${registry.models[0].model}">浏览全部维修模块 <span>→</span></a></div>`:''}</section>
+  const cards=registry.models.map(m=>`<a href="#/${m.model}" class="model-card ${m.model==='981'?'owner-car':''}"><div class="model-top"><span class="model-label">PORSCHE · ${escapeHTML(m.name)}</span><span class="pill light">维修手册已收录 <i></i></span></div><div class="model-number ${m.model.length>4?'long-model':''}">${escapeHTML(m.model)}<span>${escapeHTML(m.years || '')}</span></div>${m.image ? `<img src="${escapeHTML(m.image)}" alt="${m.model==='981'?'红色黑顶 981 Boxster 卡通插画':escapeHTML(m.model)+' 车型图片'}" class="car-art">${m.model==='981'?alternateCover():''}` : `<div class="model-placeholder">${icon('book')}<span>WORKSHOP MANUAL</span><small>${fmt(m.sourcePages)} 页 · ${fmt(m.documentCount)} 份资料</small></div>`}<div class="model-bottom"><div><h2>${escapeHTML(m.name)}</h2><p>查看维修模块与资料索引</p></div><span class="round-arrow">↗</span></div></a>`).join('');
+  app.innerHTML=`<section class="home-intro"><h1>车型资料库</h1><p>选择车型，查阅原版车间维修手册。</p><div class="intro-caption"><span>${registry.models.length} 个已收录车型</span><span>按系统归档 · 按需阅读</span></div></section>
+  <section class="model-section ${registry.models.length>1?'multi-model':''}" aria-label="选择车型">${cards}${registry.models.length===1?`<div class="model-detail"><span class="eyebrow">已收录资料</span><h2>车间维修资料</h2><p>按系统找到维修项目，<br>用熟悉的词搜索专业资料。</p><div class="stat-line"><strong>${fmt(totalPages)}</strong><span>页原版资料</span></div><div class="stat-line"><strong>${fmt(totalDocs)}</strong><span>份维修资料切片</span></div><a class="text-link" href="#/${registry.models[0].model}">浏览全部维修模块 <span>→</span></a></div>`:''}</section>
   ${canResume ? `<a class="resume" href="${docURL(last.id,last.page,lastModel)}"><span>↳ 继续上次阅读 · ${escapeHTML(lastModel)}</span><strong>${escapeHTML(last.title || '维修资料')}</strong><span>第 ${Number(last.page)||1} 页 →</span></a>`:''}
   <section class="home-notes"><div><b>01</b><span><strong>按系统归档</strong><small>保养、动力、底盘与车身</small></span></div><div><b>02</b><span><strong>模糊关联搜索</strong><small>支持常用叫法与维修编号</small></span></div><div><b>03</b><span><strong>保留原始图文</strong><small>按项目加载，随时核对原页</small></span></div></section>`;
 }
@@ -97,7 +100,7 @@ async function route() {
   const version=++routeVersion;
   document.querySelector('#nav-models').classList.toggle('active',path==='/');
   document.querySelector('#nav-manual').classList.toggle('active',path!=='/');
-  document.title='Werkstatt · 保时捷维修手册';
+  document.title='Porsche 维修资料库';
   window.scrollTo(0,0);
   if(path==='/'){home();return;}
   if(!match || !registry.models.some(m=>m.model===model)){notFound();return;}
