@@ -50,9 +50,6 @@
 }
 .button.subtle, .search-wrap > svg { color: var(--secondary); }
 :root[data-theme="green"] .owner-car .round-arrow { color: var(--primary); }
-/* Other paint themes use the supplied 911 line drawing as their cover. */
-.owner-car .theme-lineart { display: none; }
+/* The model-specific line drawing is the cover in every theme. */
 :root:not([data-theme="red"]) .owner-car { background: var(--cover); }
-:root:not([data-theme="red"]) .owner-car > img.car-art { display: none; }
-:root:not([data-theme="red"]) .owner-car .theme-lineart { display: block; }
 .cover-lineart-tone { flood-color: var(--on-dark-muted); }
