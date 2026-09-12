@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "models": [
+    {
+      "model": "981",
+      "name": "Boxster / Boxster S / Boxster GTS",
+      "years": "2013–2015",
+      "sourcePages": 4456,
+      "catalog": "data/981.json",
+      "documentCount": 1223,
+      "image": "assets/981.svg"
+    }
+  ]
+}

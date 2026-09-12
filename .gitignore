@@ -4,3 +4,6 @@
 .DS_Store
 /*.pdf
 __pycache__/
+
+/manuals/*
+!/manuals/README.md
