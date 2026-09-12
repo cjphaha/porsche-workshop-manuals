@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "model": "981",
+  "categories": [
+    {"id":"engine","name":"发动机保养"},
+    {"id":"cabin","name":"空调与座舱"},
+    {"id":"ignition","name":"点火系统"},
+    {"id":"brakes","name":"制动系统"}
+  ],
+  "parts": [
+    {
+      "id":"oil-filter","category":"engine","name":"发动机机油滤芯","fitment":"981 Boxster / S / GTS · 2.7 / 3.4","note":"滤芯与带壳总成不是同一个商品；此处仅列滤芯对照。",
+      "genuine":[{"number":"9A1 107 224 00","note":"原厂滤芯号"},{"number":"0PB 115 466 A","note":"MANN 目录所列另一原厂对照号"}],
+      "alternatives":[{"brand":"MANN-FILTER","number":"HU 7026 z","type":"品牌对照滤芯，含密封圈"}],
+      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/mea-en/catalogue/search-results/product.html/hu7026z_mann-filter.html"},{"label":"Rennlist 滤芯与总成讨论","url":"https://rennlist.com/forums/981-forum/1354884-can-someone-check-their-oil-filter-housing-part-number.html"}]
+    },
+    {
+      "id":"engine-air-filter","category":"engine","name":"发动机空气滤芯（左右一套）","fitment":"981 Boxster / S / GTS · 2.7 / 3.4","note":"BMC 为可清洗性能替代件，不应视作保时捷原装供应件；一套含两只。",
+      "genuine":[{"number":"981 110 130 00","note":"单只原厂滤芯号"}],
+      "alternatives":[{"brand":"BMC","number":"FB750/04","type":"性能替代件，一套两只"}],
+      "sources":[{"label":"BMC 官方对照与适用表","url":"https://www.bmcairfilters.com/en/products/engine-filter/car/unique/fb750-04"},{"label":"Rennlist 车主保养清单","url":"https://rennlist.com/forums/981-forum/1173667-what-did-you-do-with-your-981-today-65.html"}]
+    },
+    {
+      "id":"cabin-prefilter","category":"cabin","name":"前舱进气预滤芯","fitment":"981 Boxster / S / GTS","note":"位于前舱进气位置；不要与乘员脚部位置的空调滤芯混淆。",
+      "genuine":[{"number":"991 572 371 00","note":"原厂号"}],
+      "alternatives":[{"brand":"MANN-FILTER","number":"CU 30 004","type":"品牌对照件"}],
+      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/de-de/katalog/suchergebnisse/produkt.html/cu30004_mann-filter.html"},{"label":"Rennlist 981 空调滤芯讨论","url":"https://rennlist.com/forums/991-gt3-gt3rs-gt2rs-and-911r/1215696-two-year-service-questions-do-you-replace-air-filters-on-a-touring-2.html"}]
+    },
+    {
+      "id":"cabin-carbon-filter","category":"cabin","name":"车内空调活性炭滤芯","fitment":"981 Boxster / S / GTS","note":"与前舱预滤芯是两个不同位置的配件。",
+      "genuine":[{"number":"9P1 819 631","note":"原厂对照号"},{"number":"991 573 623 00","note":"MANN 目录所列另一原厂对照号"}],
+      "alternatives":[{"brand":"MANN-FILTER","number":"CUK 25 006","type":"活性炭品牌对照件"}],
+      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/cuk25006_mann-filter.html"},{"label":"Rennlist 981 空调滤芯讨论","url":"https://rennlist.com/forums/991-gt3-gt3rs-gt2rs-and-911r/1215696-two-year-service-questions-do-you-replace-air-filters-on-a-touring-2.html"}]
+    },
+    {
+      "id":"spark-plug","category":"ignition","name":"火花塞","fitment":"981 Boxster / S / GTS · 2.7 / 3.4","note":"六缸车通常一车六只；购买时仍需按发动机号核对。",
+      "genuine":[{"number":"999 170 151 90","note":"Rennlist 所列保时捷号"}],
+      "alternatives":[{"brand":"Bosch","number":"FGR5NQE04","type":"Rennlist 车主实际使用型号"}],
+      "sources":[{"label":"Rennlist 981 车主保养清单","url":"https://rennlist.com/forums/981-forum/1173667-what-did-you-do-with-your-981-today-65.html"},{"label":"Rennlist Bosch/保时捷号讨论","url":"https://rennlist.com/forums/987-forum/726082-changing-spark-plugs-on-cayman.html"}]
+    },
+    {
+      "id":"front-brake-pads","category":"brakes","name":"前轴制动片","fitment":"981 普通钢制制动系统 · 标准黑色卡钳","note":"不适用于 PCCB；S/GTS 或改装卡钳可能不同，务必按 VIN、卡钳和制动盘确认。",
+      "genuine":[{"number":"981 351 939 04","note":"标准黑色卡钳原厂号"}],
+      "alternatives":[{"brand":"Brembo","number":"P 65 018","type":"官方目录所列 OE 对照件"}],
+      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P_65_018/pdf"},{"label":"配件适用配置说明","url":"https://www.teile.com/en/porsche-parts-shop/model-boxster-981/30/Wheels-brakes/602A-Disc-brake-front-axle/30/602-00-Disc-brake-front/Brake-pads-repair-kit-basic-version-calliper-in-black-L-R/44023"}]
+    },
+    {
+      "id":"rear-brake-pads","category":"brakes","name":"后轴制动片","fitment":"981 普通钢制制动系统 · 需核对卡钳","note":"Brembo N 为陶瓷配方替代件，并非保时捷原装材质；PCCB 和升级制动系统不适用。",
+      "genuine":[{"number":"987 352 939 03","note":"原厂号"}],
+      "alternatives":[{"brand":"Brembo","number":"P 65 028 N","type":"陶瓷配方品牌替代件"}],
+      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P65028N/pdf"},{"label":"配件适用车型说明","url":"https://teile.com/en/porsche-parts-shop/model-Boxster-981/30/Wheels-brakes/603-Disc-brake-rear-axle/31/603-00-Disc-brake-rear/Brake-pad-set-L-R/29922"}]
+    }
+  ]
+}

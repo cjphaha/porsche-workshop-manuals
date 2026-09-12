@@ -9,6 +9,7 @@ const readStorage = key => {try{return JSON.parse(localStorage.getItem(key));}ca
 const writeStorage = (key,value) => {try{localStorage.setItem(key,JSON.stringify(value));}catch{/* Private browsing still works. */}};
 let catalog, index, reader, registry, routeVersion=0, returnRoute='#/';
 const catalogCache=new Map();
+const partsCache=new Map();
 const iconPaths = {
   service:'M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2 2.8 2.8M5.6 18.4l2.8-2.8m7.2-7.2 2.8-2.8M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0',
   engine:'M4 8h4V5h8v3h3v4h2v6h-5l-2 2H7l-3-4V8ZM1 10v6m7-13h8',
@@ -35,18 +36,19 @@ function home() {
   const canResume=last && registry.models.some(m=>m.model===lastModel) && typeof last.id==='string' && /^[a-z0-9-]+$/.test(last.id);
   const totalPages=registry.models.reduce((sum,m)=>sum+m.sourcePages,0);
   const totalDocs=registry.models.reduce((sum,m)=>sum+m.documentCount,0);
-  const cards=registry.models.map(m=>`<a href="#/${m.model}" class="model-card ${m.coverImage||m.image?'owner-car':''}"><div class="model-top"><span class="model-label">PORSCHE · ${escapeHTML(m.model)}</span><span class="pill light">维修手册已收录 <i></i></span></div><div class="model-number ${m.model.length>4?'long-model':''}">${escapeHTML(m.model)}<span>${escapeHTML(m.years || '')}</span></div>${m.coverImage ? lineArtCover(m) : m.image ? `<img src="${escapeHTML(m.image)}" alt="${escapeHTML(m.model)} 车型插画" class="car-art">` : `<div class="model-placeholder">${icon('book')}<span>WORKSHOP MANUAL</span><small>${fmt(m.sourcePages)} 页 · ${fmt(m.documentCount)} 份资料</small></div>`}<div class="model-bottom"><div><h2>${escapeHTML(m.model)} 车间维修手册</h2><p>查看维修模块与资料索引</p></div><span class="round-arrow">↗</span></div></a>`).join('');
-  app.innerHTML=`<section class="home-intro"><h1>车型资料库</h1><p>选择车型，查阅原版车间维修手册。</p><div class="intro-caption"><span>${registry.models.length} 个已收录车型</span><span>按系统归档 · 按需阅读</span></div></section>
+  const cards=registry.models.map(m=>`<a href="#/${m.model}" class="model-card ${m.coverImage||m.image?'owner-car':''}"><div class="model-top"><span class="model-label">PORSCHE · ${escapeHTML(m.model)}</span><span class="pill light">维修手册已收录 <i></i></span></div><div class="model-number ${m.model.length>4?'long-model':''}">${escapeHTML(m.model)}<span>${escapeHTML(m.years || '')}</span></div>${m.coverImage ? lineArtCover(m) : m.image ? `<img src="${escapeHTML(m.image)}" alt="${escapeHTML(m.model)} 车型插画" class="car-art">` : `<div class="model-placeholder">${icon('book')}<span>WORKSHOP MANUAL</span><small>${fmt(m.sourcePages)} 页 · ${fmt(m.documentCount)} 份资料</small></div>`}<div class="model-bottom"><div><h2>${escapeHTML(m.model)} 车间维修手册</h2><p>${m.partsCatalog?'查看维修手册与常用配件':'查看维修模块与资料索引'}</p></div><span class="round-arrow">↗</span></div></a>`).join('');
+  app.innerHTML=`<section class="home-intro"><h1>车型资料库</h1><p>选择车型，查阅车间维修手册与常用配件。</p><div class="intro-caption"><span>${registry.models.length} 个已收录车型</span><span>按系统归档 · 按需阅读</span></div></section>
   <section class="model-section ${registry.models.length>1?'multi-model':''}" aria-label="选择车型">${cards}${registry.models.length===1?`<div class="model-detail"><span class="eyebrow">已收录资料</span><h2>车间维修资料</h2><p>按系统找到维修项目，<br>用熟悉的词搜索专业资料。</p><div class="stat-line"><strong>${fmt(totalPages)}</strong><span>页原版资料</span></div><div class="stat-line"><strong>${fmt(totalDocs)}</strong><span>份维修资料切片</span></div><a class="text-link" href="#/${registry.models[0].model}">浏览全部维修模块 <span>→</span></a></div>`:''}</section>
   ${canResume ? `<a class="resume" href="${docURL(last.id,last.page,lastModel)}"><span>↳ 继续上次阅读 · ${escapeHTML(lastModel)}</span><strong>${escapeHTML(last.title || '维修资料')}</strong><span>第 ${Number(last.page)||1} 页 →</span></a>`:''}
   <section class="home-notes"><div><b>01</b><span><strong>按系统归档</strong><small>保养、动力、底盘与车身</small></span></div><div><b>02</b><span><strong>模糊关联搜索</strong><small>支持常用叫法与维修编号</small></span></div><div><b>03</b><span><strong>保留原始图文</strong><small>按项目加载，随时核对原页</small></span></div></section>`;
 }
 function library(params) {
   const libraryVersion=routeVersion;
+  const partsEntry=registry.models.find(item=>item.model===catalog.model)?.partsCatalog;
   let module=params.get('module') || 'all';
   if(module!=='all' && !catalog.modules.some(m=>m.id===module)) module='all';
   let query=params.get('q') || '', limit=50;
-  app.innerHTML=`<section class="library-heading"><a href="#/" class="back-link">← 车型资料库</a><div class="library-title"><div><div class="eyebrow">${escapeHTML(catalog.name)}</div><h1>${escapeHTML(catalog.model)} <span>车间维修手册</span></h1></div><span class="edition">${escapeHTML(registry.models.find(m=>m.model===catalog.model)?.years || catalog.years || "年份未标注")}<br><small>${fmt(catalog.sourcePages)} 页原版资料</small></span></div><div class="search-wrap">${icon('search')}<input id="search" type="search" value="${escapeHTML(query)}" placeholder="搜索维修项目、部件或 WM 编号，例如：电瓶、刹车、PDK" aria-label="搜索维修资料" autocomplete="off"><kbd>/</kbd></div><div class="search-helper"><span>搜索项目标题与编号，支持同义词关联和错字容错</span><span id="related"></span></div></section>
+  app.innerHTML=`<section class="library-heading"><a href="#/" class="back-link">← 车型资料库</a><div class="library-title"><div><div class="eyebrow">${escapeHTML(catalog.name)}</div><h1>${escapeHTML(catalog.model)} <span>车间维修手册</span></h1></div><span class="edition">${escapeHTML(registry.models.find(m=>m.model===catalog.model)?.years || catalog.years || "年份未标注")}<br><small>${fmt(catalog.sourcePages)} 页原版资料</small></span></div>${partsEntry?`<div class="library-tabs" aria-label="车型资料类型"><a class="active" aria-current="page" href="#/${catalog.model}">维修手册</a><a href="#/${catalog.model}/parts">配件目录</a></div>`:''}<div class="search-wrap">${icon('search')}<input id="search" type="search" value="${escapeHTML(query)}" placeholder="搜索维修项目、部件或 WM 编号，例如：电瓶、刹车、PDK" aria-label="搜索维修资料" autocomplete="off"><kbd>/</kbd></div><div class="search-helper"><span>搜索项目标题与编号，支持同义词关联和错字容错</span><span id="related"></span></div></section>
   <div class="library-layout"><aside class="module-sidebar"><div class="sidebar-heading">维修模块 <span>${catalog.modules.length}</span></div><button class="module-link" data-module="all">${icon('book')}<span>全部资料</span><small>${catalog.documents.length}</small></button>${catalog.modules.map(m=>`<button class="module-link" data-module="${m.id}">${icon(m.icon)}<span>${m.name}</span><small>${m.count}</small></button>`).join('')}<div class="sidebar-note">资料阅读说明<p>索引来自原书目录或页首标题。不同配置的适用范围，请以 PDF 原文为准。</p></div></aside><section class="catalog-content"><div id="catalog-results"></div></section></div>`;
   function updateURL() {
     const p=new URLSearchParams();if(module!=='all')p.set('module',module);if(query)p.set('q',query);
@@ -72,6 +74,29 @@ function library(params) {
   document.querySelector('#search').oninput=e=>{query=e.target.value;clearTimeout(debounce);debounce=setTimeout(()=>{if(libraryVersion!==routeVersion || !document.querySelector('#catalog-results'))return;limit=50;updateURL();draw();},100);};
   draw();updateURL();
 }
+function partsLibrary(partsCatalog,params) {
+  const libraryVersion=routeVersion;
+  let category=params.get('category') || 'all';
+  if(category!=='all' && !partsCatalog.categories.some(item=>item.id===category))category='all';
+  let query=params.get('q') || '';
+  const years=registry.models.find(item=>item.model===catalog.model)?.years || catalog.years || '年份未标注';
+  app.innerHTML=`<section class="library-heading parts-heading"><a href="#/" class="back-link">← 车型资料库</a><div class="library-title"><div><div class="eyebrow">${escapeHTML(catalog.name)}</div><h1>${escapeHTML(catalog.model)} <span>常用配件目录</span></h1></div><span class="edition">${escapeHTML(years)}<br><small>${fmt(partsCatalog.parts.length)} 条已核对配件</small></span></div><div class="library-tabs" aria-label="车型资料类型"><a href="#/${catalog.model}">维修手册</a><a class="active" aria-current="page" href="#/${catalog.model}/parts">配件目录</a></div><div class="search-wrap">${icon('search')}<input id="parts-search" type="search" value="${escapeHTML(query)}" placeholder="搜索零件名称、保时捷原厂号、品牌或品牌型号" aria-label="搜索配件" autocomplete="off"><kbd>/</kbd></div><div class="search-helper"><span>原厂号与品牌件号分开列示，配件适用性需按 VIN 和车辆配置确认</span></div></section><div class="library-layout parts-layout"><aside class="module-sidebar parts-sidebar"><div class="sidebar-heading">配件系统 <span>${partsCatalog.categories.length}</span></div><button class="module-link" data-category="all"><span>全部配件</span><small>${partsCatalog.parts.length}</small></button>${partsCatalog.categories.map(item=>`<button class="module-link" data-category="${escapeHTML(item.id)}"><span>${escapeHTML(item.name)}</span><small>${partsCatalog.parts.filter(part=>part.category===item.id).length}</small></button>`).join('')}<div class="sidebar-note">配件阅读说明<p>品牌件是公开目录或车主经验中的对照件，不自动等同保时捷原装供应件。采购前请核对 VIN、发动机、卡钳和选装配置。</p></div></aside><section class="catalog-content"><div id="parts-results"></div></section></div>`;
+  function updateURL(){const p=new URLSearchParams();if(category!=='all')p.set('category',category);if(query)p.set('q',query);history.replaceState(null,'',`#/${catalog.model}/parts${p.size?'?'+p:''}`);}
+  function draw(){
+    const terms=query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    const rows=partsCatalog.parts.filter(part=>{
+      if(category!=='all' && part.category!==category)return false;
+      const content=[part.name,part.fitment,part.note,...part.genuine.map(item=>item.number),...part.alternatives.flatMap(item=>[item.brand,item.number,item.type])].join(' ').toLocaleLowerCase();
+      return terms.every(term=>content.includes(term));
+    });
+    document.querySelectorAll('[data-category]').forEach(el=>{const active=el.dataset.category===category;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});
+    document.querySelector('#parts-results').innerHTML=`<div class="section-top result-heading"><div><h2>${query?`“${escapeHTML(query)}” 的配件结果`:category==='all'?'全部常用配件':escapeHTML(partsCatalog.categories.find(item=>item.id===category)?.name)}</h2><p>原厂零件号与品牌件型号均附可查来源</p></div><span>${rows.length} 条配件</span></div>${rows.length?`<div class="parts-list">${rows.map(part=>`<article class="part-card"><div class="part-card-top"><div><div class="document-meta"><span>${escapeHTML(partsCatalog.categories.find(item=>item.id===part.category)?.name||'配件')}</span><span>${escapeHTML(part.fitment)}</span></div><h3>${escapeHTML(part.name)}</h3></div></div><div class="part-number-grid"><div class="part-number-group"><span class="part-field-label">保时捷原厂零件号</span>${part.genuine.map(item=>`<div class="part-number"><strong>${escapeHTML(item.number)}</strong>${item.note?`<small>${escapeHTML(item.note)}</small>`:''}</div>`).join('')}</div><div class="part-number-group"><span class="part-field-label">品牌件 / 对照型号</span>${part.alternatives.map(item=>`<div class="part-number"><strong>${escapeHTML(item.brand)} · ${escapeHTML(item.number)}</strong><small>${escapeHTML(item.type)}</small></div>`).join('')}</div></div>${part.note?`<p class="part-note">${escapeHTML(part.note)}</p>`:''}<div class="part-sources"><span>核对来源</span>${part.sources.map(source=>`<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.label)} ↗</a>`).join('')}</div></article>`).join('')}</div>`:`<div class="empty-state">${icon('search')}<h3>没有找到对应配件</h3><p>试试更短的名称、原厂号或品牌型号。</p></div>`}`;
+  }
+  document.querySelectorAll('[data-category]').forEach(el=>el.onclick=()=>{category=el.dataset.category;updateURL();draw();document.querySelector('.catalog-content').scrollIntoView({behavior:'smooth',block:'start'});});
+  let debounce;
+  document.querySelector('#parts-search').oninput=e=>{query=e.target.value;clearTimeout(debounce);debounce=setTimeout(()=>{if(libraryVersion!==routeVersion || !document.querySelector('#parts-results'))return;updateURL();draw();},100);};
+  draw();updateURL();
+}
 function openReader(doc,page) {
   reader=createContinuousReader({app,catalog,index,doc,page,returnRoute});
 }
@@ -86,11 +111,23 @@ async function loadCatalog(model) {
   }
   return catalogCache.get(model);
 }
+async function loadParts(model) {
+  if(!partsCache.has(model)){
+    const entry=registry.models.find(item=>item.model===model);
+    if(!entry?.partsCatalog)throw Error('该车型暂无配件目录');
+    const response=await fetch(new URL('../'+entry.partsCatalog,import.meta.url));
+    if(!response.ok)throw Error('Parts HTTP '+response.status);
+    const data=await response.json();
+    if(data.model!==model || !Array.isArray(data.categories) || !Array.isArray(data.parts))throw Error('配件目录格式无效');
+    partsCache.set(model,data);
+  }
+  return partsCache.get(model);
+}
 function notFound(){app.innerHTML='<div class="empty-state"><h1>没有找到这份资料</h1><p>请从车型资料库重新选择车型和维修项目。</p><a class="button" href="#/">返回车型选择</a></div>';}
 async function route() {
   const [path,query='']=(location.hash.slice(1)||'/').split('?');
   const params=new URLSearchParams(query);
-  const match=path.match(/^\/([a-z0-9][a-z0-9-]{0,39})(?:\/doc\/([a-z0-9-]+))?$/);
+  const match=path.match(/^\/([a-z0-9][a-z0-9-]{0,39})(?:\/doc\/([a-z0-9-]+)|\/(parts))?$/);
   const model=match?.[1];
   if(model && reader?.model===model && reader.contains(match[2])) {
     const doc=index.find(d=>d.id===match[2]);
@@ -113,6 +150,7 @@ async function route() {
     document.querySelector('#nav-manual').href='#/'+model;
     const saved=readStorage('werkstatt-return-route:'+model);
     returnRoute=typeof saved==='string' && (saved==='#/'+model || saved.startsWith('#/'+model+'?'))?saved:'#/'+model;
+    if(match[3]){if(!registry.models.find(item=>item.model===model)?.partsCatalog){notFound();return;}const parts=await loadParts(model);if(version!==routeVersion)return;document.title=`${catalog.model} 配件目录 · Porsche 维修资料库`;partsLibrary(parts,params);return;}
     if(!match[2]){library(params);return;}
     const doc=index.find(d=>d.id===match[2]);
     if(!doc){notFound();return;}
@@ -125,7 +163,7 @@ async function route() {
     document.querySelector('#retry-catalog').onclick=()=>route();
   }
 }
-document.addEventListener('keydown',e=>{if(e.key==='/' && !/INPUT|TEXTAREA/.test(e.target.tagName)){const input=document.querySelector('#search');if(input){e.preventDefault();input.focus();}}});
+document.addEventListener('keydown',e=>{if(e.key==='/' && !/INPUT|TEXTAREA/.test(e.target.tagName)){const input=document.querySelector('#search, #parts-search');if(input){e.preventDefault();input.focus();}}});
 try {
   const response=await fetch(new URL('../data/models.json',import.meta.url));
   if(!response.ok)throw Error('Registry HTTP '+response.status);

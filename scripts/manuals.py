@@ -278,6 +278,8 @@ def build_model(args, data):
                  sourcePages=data['pageCount'], documentCount=len(docs))
     if old_entry and old_entry.get('image'):
         entry['image'] = old_entry['image']
+    if old_entry and old_entry.get('partsCatalog'):
+        entry['partsCatalog'] = old_entry['partsCatalog']
     models = [entry if m['model'] == model else m for m in registry['models']]
     if not old_entry:
         models.append(entry)

@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "model": "982",
+  "categories": [
+    {"id":"engine","name":"发动机保养"},
+    {"id":"cabin","name":"空调与座舱"},
+    {"id":"ignition","name":"点火系统"},
+    {"id":"brakes","name":"制动系统"}
+  ],
+  "parts": [
+    {
+      "id":"oil-filter","category":"engine","name":"发动机机油滤芯","fitment":"2018 718 Boxster / S / GTS · 2.0 / 2.5 四缸","note":"此目录仅覆盖 2018 年四缸车型；不要套用后期 4.0 六缸滤芯。",
+      "genuine":[{"number":"9A2 107 225 00","note":"原厂对照号"},{"number":"0PC 115 466","note":"MANN 目录所列另一原厂对照号"}],
+      "alternatives":[{"brand":"MANN-FILTER","number":"HU 7051 z","type":"品牌对照滤芯，含密封圈"},{"brand":"Hengst","number":"E911H D455","type":"品牌对照滤芯"}],
+      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/mea-en/catalogue/search-results/product.html/hu7051z_mann-filter.html"},{"label":"Hengst 官方适用表","url":"https://catalog.hengst.com/en/online-catalog/product/8229310000-01/nl/"}]
+    },
+    {
+      "id":"engine-air-filter","category":"engine","name":"发动机空气滤芯","fitment":"2018 718 Boxster / S / GTS · 2.0 / 2.5 四缸","note":"按车辆原装进气结构核对；与 981 六缸空气滤芯不同。",
+      "genuine":[{"number":"982 129 620 B","note":"原厂对照号"}],
+      "alternatives":[{"brand":"Hengst","number":"E1590L","type":"品牌对照件"}],
+      "sources":[{"label":"Hengst 官方适用与 OE 对照","url":"https://catalog.hengst.com/en/online-catalog/product/8229310000-01/nl/"}]
+    },
+    {
+      "id":"cabin-prefilter","category":"cabin","name":"前舱进气预滤芯","fitment":"2018 718 Boxster / S / GTS","note":"718 乘员舱另有一个空调滤芯，此条为前舱预滤芯。",
+      "genuine":[{"number":"991 572 371 00","note":"原厂号"}],
+      "alternatives":[{"brand":"MANN-FILTER","number":"CU 30 004","type":"品牌对照件"}],
+      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/de-de/katalog/suchergebnisse/produkt.html/cu30004_mann-filter.html"},{"label":"Rennlist 718 两处滤芯说明","url":"https://rennlist.com/forums/718-forum/1140807-2-year-service-replace-air-intake-pre-filter.html"}]
+    },
+    {
+      "id":"cabin-carbon-filter","category":"cabin","name":"车内空调活性炭滤芯","fitment":"2018 718 Boxster / S / GTS","note":"位于乘员侧空调系统；与前舱预滤芯分开购买。",
+      "genuine":[{"number":"9P1 819 631","note":"原厂对照号"},{"number":"991 573 623 00","note":"MANN 目录所列另一原厂对照号"}],
+      "alternatives":[{"brand":"MANN-FILTER","number":"CUK 25 006","type":"活性炭品牌对照件"}],
+      "sources":[{"label":"MANN 官方目录","url":"https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/cuk25006_mann-filter.html"},{"label":"Rennlist 718 两处滤芯说明","url":"https://rennlist.com/forums/718-forum/1140807-2-year-service-replace-air-intake-pre-filter.html"}]
+    },
+    {
+      "id":"spark-plug-base","category":"ignition","name":"火花塞 · 2.0 基础版","fitment":"2018 718 Boxster · 2.0 四缸","note":"仅列 2.0 基础版；2.5 S / GTS 使用下方另一型号。",
+      "genuine":[{"number":"0PB 905 612","note":"原厂号"}],
+      "alternatives":[{"brand":"Bosch","number":"8124 / ZR5NPP332SBP","type":"品牌对照型号"}],
+      "sources":[{"label":"Bosch 适用对照资料","url":"https://www.rmeuropean.com/Products/0PB905612-MFG14.aspx"},{"label":"Rennlist 零件号讨论","url":"https://rennlist.com/forums/992/1246829-2021-992-s-do-not-have-spark-plugs-or-ignition-coils.html"}]
+    },
+    {
+      "id":"spark-plug-s-gts","category":"ignition","name":"火花塞 · 2.5 S / GTS","fitment":"2018 718 Boxster S / GTS · 2.5 四缸","note":"与 2.0 基础版不同；一车四只。",
+      "genuine":[{"number":"9A7 905 606 00","note":"原厂号"}],
+      "alternatives":[{"brand":"NGK","number":"SILKGR9A7EG / 91731","type":"品牌对照型号"}],
+      "sources":[{"label":"NGK 官方交叉对照","url":"https://www.ngkntk.com/fileadmin/general_content_all_countries/catalogues/2025/ngkntk_catalogue_2wheel_2025-2026_en_2025-06_a4.pdf"},{"label":"车型适用资料","url":"https://www.rmeuropean.com/Products/9A790560600-MFG220.aspx"}]
+    },
+    {
+      "id":"front-brake-pads","category":"brakes","name":"前轴制动片","fitment":"2018 718 普通钢制制动系统 · 标准卡钳","note":"仅作标准钢制制动系统对照；PCCB、GTS 及改装卡钳请先按 VIN 和卡钳规格确认。",
+      "genuine":[{"number":"982 698 151 B","note":"Brembo 目录所列原厂对照号"}],
+      "alternatives":[{"brand":"Brembo","number":"P 65 018","type":"官方目录所列 OE 对照件"}],
+      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P_65_018/pdf"}]
+    },
+    {
+      "id":"rear-brake-pads","category":"brakes","name":"后轴制动片","fitment":"2018 718 普通钢制制动系统 · 需核对卡钳","note":"Brembo N 为陶瓷配方替代件；PCCB、GTS 及改装制动系统须单独查号。",
+      "genuine":[{"number":"987 352 939 03","note":"原厂对照号"}],
+      "alternatives":[{"brand":"Brembo","number":"P 65 028 N","type":"陶瓷配方品牌替代件"}],
+      "sources":[{"label":"Brembo 官方对照表","url":"https://www.bremboparts.com/europe/en/catalogue/pad/P65028N/pdf"},{"label":"配件适用车型说明","url":"https://teile.com/en/porsche-parts-shop/model-Boxster-981/30/Wheels-brakes/603-Disc-brake-rear-axle/31/603-00-Disc-brake-rear/Brake-pad-set-L-R/29922"}]
+    }
+  ]
+}
