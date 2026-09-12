@@ -194,6 +194,6 @@ npm run validate
 
 ## 第三方组件
 
-PDF.js 5.6.205，Apache-2.0，许可证在 `site/vendor/pdfjs/LICENSE`。pdf-lib 用于浏览器内合并 PDF，许可证在 `site/vendor/pdf-lib/LICENSE.md`。车型 SVG 为示意图。本站是独立整理的资料索引，非保时捷官方网站。
+PDF.js 5.6.205 legacy build（兼容旧版 Safari），Apache-2.0，许可证在 `site/vendor/pdfjs/LICENSE`。pdf-lib 用于浏览器内合并 PDF，许可证在 `site/vendor/pdf-lib/LICENSE.md`。车型 SVG 为示意图。本站是独立整理的资料索引，非保时捷官方网站。
 
 连续阅读验收：启动本地预览后运行 `node tests/continuous-reader.cjs`，覆盖滚动加载、128 页画布回收、续页合并、移动端、下载与失败重试。下载测试文件保存在 `tmp/`。

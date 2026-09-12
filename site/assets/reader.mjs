@@ -3,7 +3,7 @@ const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&
 const urlFor=(model,id,page)=>`#/${model}/doc/${id}?page=${page}`;
 const save=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));}catch{}};
 let pdfModule;
-const getPDFModule=()=>pdfModule ||= import('../vendor/pdfjs/pdf.mjs');
+const getPDFModule=()=>pdfModule ||= import('../vendor/pdfjs/pdf.mjs?v=mobile-compat-1');
 
 export function createContinuousReader({app,catalog,index,doc,page,returnRoute}) {
   const model=catalog.model, parts=getProjectParts(doc,index), pages=getProjectPages(parts);
@@ -116,16 +116,23 @@ export function createContinuousReader({app,catalog,index,doc,page,returnRoute})
       s.renderTask=pdfPage.render({canvasContext:canvas.getContext('2d'),viewport,transform:[ratio,0,0,ratio,0,0]});
       await s.renderTask.promise;
       if(!valid())return;
-      const content=await pdfPage.getTextContent();
-      if(!valid())return;
-      s.textLayer=new pdfjs.TextLayer({textContentSource:content,container:text,viewport});
-      await s.textLayer.render();
-      if(!valid())return;
       s.rendered=true;s.element.dataset.rendered='true';status.hidden=true;
+      try {
+        const content=await pdfPage.getTextContent();
+        if(!valid())return;
+        s.textLayer=new pdfjs.TextLayer({textContentSource:content,container:text,viewport});
+        await s.textLayer.render();
+      }catch(error) {
+        if(valid()) {
+          text.remove();
+          console.warn('PDF text layer failed; keeping rendered page',s.doc.id,s.local,error);
+        }
+      }
     }catch(error) {
       if(!valid() || error.name==='RenderingCancelledException' || error.name==='AbortException')return;
+      console.error('PDF page render failed',s.doc.id,s.local,error);
       s.error=true;
-      s.surface.innerHTML=`<div class="page-load-state page-error">此页加载失败，请检查网络。<button type="button">重新加载</button><a href="${s.doc.file}" target="_blank" rel="noopener">单独打开此段 PDF ↗</a></div>`;
+      s.surface.innerHTML=`<div class="page-load-state page-error">此页暂时无法显示，请重试。<button type="button">重新加载</button><a href="${escapeHTML(s.doc.file)}" target="_blank" rel="noopener">单独打开此段 PDF ↗</a></div>`;
       s.surface.querySelector('button').onclick=()=>{s.error=false;pump();};
       status.hidden=true;
     }finally {
@@ -202,7 +209,7 @@ export function createContinuousReader({app,catalog,index,doc,page,returnRoute})
   if(current>0)jump(current);else refresh();
   getPDFModule().then(module=>{
     if(closed)return;pdfjs=module;
-    pdfjs.GlobalWorkerOptions.workerSrc=new URL('../vendor/pdfjs/pdf.worker.mjs',import.meta.url).href;
+    pdfjs.GlobalWorkerOptions.workerSrc=new URL('../vendor/pdfjs/pdf.worker.mjs?v=mobile-compat-1',import.meta.url).href;
     refresh();
   }).catch(()=>{if(!closed){status.textContent='阅读器加载失败，请刷新重试。';status.hidden=false;}});
   return {model,id:doc.id,contains:id=>parts.some(p=>p.id===id),goToDoc:(id,local)=>{

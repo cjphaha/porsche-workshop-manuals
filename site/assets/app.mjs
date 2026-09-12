@@ -1,4 +1,4 @@
-import {createContinuousReader} from './reader.mjs';
+import {createContinuousReader} from './reader.mjs?v=mobile-compat-1';
 import {buildIndex, searchDocuments, relatedTerms} from './search.mjs';
 
 const app = document.querySelector('#app');
